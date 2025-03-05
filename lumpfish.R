@@ -427,7 +427,17 @@ for(i in 4:ncol(qmatrix2_lump_broad)){
 #transform the list into the new qmatrix
 qmatrix3_lump_broad <- bind_rows(qmatrix_new_list_lump_broad)
 
-
+#WHY ON EARTH, if all the below return different k-means clusters, does cluster 6 not show up in the LEA plot??!!!
+filter(qmatrix3_lump_broad,ID=="NOR17") %>% filter(Prob==max(Prob))
+filter(qmatrix3_lump_broad,ID=="ISF21") %>% filter(Prob==max(Prob))
+filter(qmatrix3_lump_broad,ID=="BRE15") %>% filter(Prob==max(Prob))
+filter(qmatrix3_lump_broad,ID=="BOK5") %>% filter(Prob==max(Prob))
+filter(qmatrix3_lump_broad,ID=="NEW12") %>% filter(Prob==max(Prob))
+filter(qmatrix3_lump_broad,ID=="BAL2_14") %>% filter(Prob==max(Prob))
+filter(qmatrix3_lump_broad,ID=="BOL9") %>% filter(Prob==max(Prob))
+filter(qmatrix3_lump_broad,ID=="NUU2_16") %>% filter(Prob==max(Prob))
+filter(qmatrix3_lump_broad,ID=="SVAN76") %>% filter(Prob==max(Prob))
+filter(qmatrix3_lump_broad,ID=="SKA50") %>% filter(Prob==max(Prob))
 
 #use a few reference individuals with certain ancestry to change the cluster names so they are consistent between the DAPC, map and barplot
 for(i in c("NOR17", "ISF21", "BRE15", "BOK5", "NEW12", "BAL2_14", "BOL9", "NUU2_16", "SVAN76", "SKA50" 
@@ -438,13 +448,7 @@ for(i in c("NOR17", "ISF21", "BRE15", "BOK5", "NEW12", "BAL2_14", "BOL9", "NUU2_
             qmatrix3_lump_broad$Variable==max_anc_lump_broad$Variable,
             max_anc_lump_broad$Kmeans_cluster)}
 
-?replace 
-qmatrix3_lump_broad%>% 
-  filter(Kmeans_cluster==1)
 
-unique(qmatrix3_lump_broad$Variable)
-
-#plot the ancestry coefficients in a nicer-looking barplot
 anc_plot_lump_broad <- ggplot(qmatrix3_lump_broad, 
                               aes(factor(ID), Prob, fill = factor(Variable))) +
   geom_col(width=1) +
@@ -1100,7 +1104,7 @@ draw.pie(xyz_broad_ss3$x, xyz_broad_ss3$y, xyz_broad_ss3$z, radius=0.7,
                "chocolate2", "chartreuse4", "tomato3", "purple3"),
 )
 
-text(cluster_pop_coords_broad_ss3$Lon, cluster_pop_coords_broad_ss3$Lat - 0.3,  
+text(cluster_pop_coords_broad_ss3$Lon, cluster_pop_coords_broad_ss3$Lat - 2,  
      labels = cluster_pop_coords_broad_ss3$Population,
      col = "black", cex = 0.8, font = 0.5)
 
