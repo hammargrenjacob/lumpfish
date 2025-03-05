@@ -1,0 +1,6 @@
+new("snmfProject", snmfProject.file = "lump_broad.str.snmfProject", 
+    projDir = "/Users/jacob/Library/Mobile Documents/com~apple~CloudDocs/University/BIO418 Conservation Genetics/R workshops/lumpfish/lumpfish/", 
+    snmfDir = "lump_broad.str.snmf/", input.file = "lump_broad.str.geno", 
+    runs = list(), K = 10L, snmfClass.files = "K10/run1/lump_broad.str_r1.10.snmfClass", 
+    n = 1597L, L = 543L, creationTime = structure(1741187502.10756, class = c("POSIXct", 
+    "POSIXt")))

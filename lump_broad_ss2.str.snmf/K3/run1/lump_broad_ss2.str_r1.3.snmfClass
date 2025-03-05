@@ -1,0 +1,5 @@
+new("snmfClass", directory = "K3/run1/", snmfClass.file = "lump_broad_ss2.str_r1.3.snmfClass", 
+    K = 3L, run = 1L, CPU = 1L, seed = 772554657L, alpha = 10, 
+    percentage = 0, I = 0L, iterations = 200L, entropy = FALSE, 
+    tolerance = 1e-05, crossEntropy = 0, ploidy = 2L, Q.input.file = "", 
+    Q.output.file = "lump_broad_ss2.str_r1.3.Q", G.output.file = "lump_broad_ss2.str_r1.3.G")
